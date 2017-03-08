@@ -3,9 +3,9 @@ package receive
 import (
 	"fmt"
 
-	"github.com/Cepave/open-falcon-backend/modules/consumer/g"
-	"github.com/Cepave/open-falcon-backend/modules/consumer/send/influx"
 	log "github.com/Sirupsen/logrus"
+	"github.com/humorless/open-falcon-rabbitmq/g"
+	"github.com/humorless/open-falcon-rabbitmq/send/influx"
 	"github.com/streadway/amqp"
 )
 
@@ -27,7 +27,7 @@ func Consume() {
 
 	q, err := ch.QueueDeclare(
 		g.Config().Mq.QueueName, // name
-		false, // durable
+		true,  // durable
 		false, // delete when unused
 		false, // exclusive
 		false, // no-wait

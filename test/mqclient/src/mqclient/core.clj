@@ -28,10 +28,10 @@
   [& args]
   (let [conn  (rmq/connect)
         ch    (lch/open conn)
-        qname "text"]
+        qname "extend"]
     (println (format "[main] Connected. Channel id: %d" (.getChannelNumber ch)))
-    (lq/declare ch qname {:exclusive false :auto-delete true})
-    (lc/subscribe ch qname message-handler {:auto-ack true})
+    (lq/declare ch qname {:durable true :exclusive false :auto-delete false})
+;;    (lc/subscribe ch qname message-handler {:auto-ack true})
     (lb/publish ch default-exchange-name qname (json/write-str message) {:content-type "text/plain" :type "greetings.hi"})
     (Thread/sleep 2000)
     (println "[main] Disconnecting...")

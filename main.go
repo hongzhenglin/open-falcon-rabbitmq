@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/Cepave/open-falcon-backend/common/logruslog"
 	"github.com/Cepave/open-falcon-backend/common/vipercfg"
-	"github.com/Cepave/open-falcon-backend/modules/consumer/g"
-	"github.com/Cepave/open-falcon-backend/modules/consumer/receive"
+	"github.com/humorless/open-falcon-rabbitmq/g"
+	"github.com/humorless/open-falcon-rabbitmq/receive"
 )
 
 func main() {

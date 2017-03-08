@@ -6,8 +6,8 @@ import (
 
 	"github.com/Cepave/open-falcon-backend/common/model"
 	cutils "github.com/Cepave/open-falcon-backend/common/utils"
-	"github.com/Cepave/open-falcon-backend/modules/consumer/g"
 	log "github.com/Sirupsen/logrus"
+	"github.com/humorless/open-falcon-rabbitmq/g"
 	"github.com/influxdata/influxdb/client/v2"
 )
 

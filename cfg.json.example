@@ -1,9 +1,9 @@
 {
     "logLevel": "debug",
     "mq": {
-      "queuename": "text",
-      "user": "mq",
-      "pass": "password",
+      "queuename": "extend",
+      "user": "guest",
+      "pass": "guest",
       "addr": "10.20.30.40:5672"
     },
     "influx": {

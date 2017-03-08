@@ -1,6 +1,6 @@
 #!/bin/sh
 
-host="localhost"
+host="10.20.30.40"
 id=root
 pw=password
 AUTH=$(echo -u $id:$pw)
@@ -9,7 +9,7 @@ MEASUREMENT="service.http.lvs.443.port"
 
 createdb(){
     echo "create database $DB"
-    curl -G "http://$host:8086/query" $AUTH --data-urlencode "q=CREATE DATABASE $DB"
+    curl -X "POST" "http://$host:8086/query" $AUTH --data-urlencode "q=CREATE DATABASE $DB"
 }
 
 database(){
