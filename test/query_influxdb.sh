@@ -5,7 +5,7 @@ id=root
 pw=password
 AUTH=$(echo -u $id:$pw)
 DB=extend
-MEASUREMENT="service.http.lvs.443.port"
+MEASUREMENT="test-metric"
 
 createdb(){
     echo "create database $DB"
